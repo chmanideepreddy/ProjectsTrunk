@@ -16,6 +16,7 @@ import android.os.Build;
 
 public class MainActivity extends Activity {
 
+	int car;
 	int counter;
 	Button add;
 	Button sub;
