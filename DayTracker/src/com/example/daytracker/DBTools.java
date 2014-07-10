@@ -135,52 +135,7 @@ public class DBTools  extends SQLiteOpenHelper {
 		database.execSQL(deleteQuery);
 	}
 
-	public ArrayList<HashMap<String, String>> getAllContacts(String id) {
-
-		// ArrayList that contains every row in the database
-		// and each row key / value stored in a HashMap
-
-		ArrayList<HashMap<String, String>> contactArrayList;
-
-		contactArrayList = new ArrayList<HashMap<String, String>>();
-
-		String selectQuery = "SELECT  * FROM contacts";
-
-		// Open a database for reading and writing
-
-		SQLiteDatabase database = this.getWritableDatabase();
-
-		// Cursor provides read and write access for the 
-		// data returned from a database query
-
-		// rawQuery executes the query and returns the result as a Cursor
-
-		Cursor cursor = database.rawQuery(selectQuery, null);	
-
-		// Move to the first row
-
-		if (cursor.moveToFirst()) {
-			do {
-				HashMap<String, String> contactMap = new HashMap<String, String>();
-
-				// Store the key / value pairs in a HashMap
-				// Access the Cursor data by index that is in the same order
-				// as used when creating the table
-
-				contactMap.put("contactId", cursor.getString(0));
-				contactMap.put("firstName", cursor.getString(1));
-				contactMap.put("lastName", cursor.getString(2));
-				contactMap.put("phoneNumber", cursor.getString(3));
-				contactMap.put("emailAddress", cursor.getString(4));
-				contactMap.put("homeAddress", cursor.getString(5));
-
-				contactArrayList.add(contactMap);
-			} while (cursor.moveToNext()); // Move Cursor to the next row
-		}
-
-		// return contact list
-		return contactArrayList;
-	}
+	
 
 	public ArrayList<HashMap<String, String>> getActivityInfo(String id) {
 		HashMap<String, String> ActivityMap = new HashMap<String, String>();
