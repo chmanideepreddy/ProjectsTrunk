@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DayTracker</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="Activities">
+        <item>Eating</item>
+        <item>Cooking</item>
+        <item>Sleeping</item>
+        <item>Working</item>
+        <item>Work out</item>
+        <item>Talking</item>
+        <item>Outing</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>
